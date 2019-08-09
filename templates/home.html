@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% block home %}
+
+    <div class="row  mt-4">
+        <div class="col-md-3"></div>
+        <div class="col-md-4 rounded border shadow p-4">
+
+
+            <form method="post" id="myForm">
+                {% csrf_token %}
+                Gender:
+                <p class="form-group">
+                    <label for="male">Male</label>
+                    <input id='male' type="checkbox" value="male" name="sex" checked>
+                    <label for="female">Female</label>
+                    <input id='female' type="checkbox" value="female" name="sex">
+                </p>
+                <span>Age:</span>
+                <p class="form-group">
+                    <label for="age">Patient age</label>
+                    <input id='age' name="age" type="number" placeholder="18-99" class="form-control" min="18" max="99" required />
+                </p>
+                <span>Pain:</span>
+                <p class="form-group">
+                    <label for="adb_pain">Abdominal pain</label>
+                    <input id='abd_pain' name="abd_pain" type="checkbox" />
+                </p>
+                <span>Blood pressure:</span>
+                <p class="form-group">
+                    <label for="sys_bp">Systolic:</label>
+                    <input id='sys_bp' name="sys_bp" type="number" placeholder="60-300" class="form-control" min="60" max="300" required />
+                </p>
+                <p class="form-group">
+                    <label for="dias_bp">Diastolic:</label>
+                    <input id='dias_bp' name="dias_bp" type="number" placeholder="30-250" class="form-control" min="30" max="250" required />
+                </p>
+                <button id='submit' class="btn btn-lg btn-success" type="submit">Submit</button>
+                <button class="btn btn-lg btn-warning float-right" type="reset">Reset</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div id='response' class="col-md-4 rounded border shadow p-4 mt-2">
+            <h2>Response:</h2>
+        </div>
+        <div class="col-md-3"></div>
+
+    </div>
+    <div class="col-md-3"></div>
+
+{% endblock %}
