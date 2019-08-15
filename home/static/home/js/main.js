@@ -34,9 +34,9 @@ $(document).ready(function () {
         response.show();
         response.empty();
 
-        if (data.length) {
+        if (data['response'].length) {
             response.append('<p>Data loaded</p>');
-            response.append(`<p>${JSON.stringify(data)}</p>`);
+            response.append(`<p>${JSON.stringify(data['response'])}</p>`);
         }else {
             response.append('<p>No questions!</p>');
         }
